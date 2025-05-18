@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iris Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Iris Flower Classifier</h2>
+        <form method="POST">
+            <input type="number" name="sepal_length" step="any" placeholder="Sepal Length" required>
+            <input type="number" name="sepal_width" step="any" placeholder="Sepal Width" required>
+            <input type="number" name="petal_length" step="any" placeholder="Petal Length" required>
+            <input type="number" name="petal_width" step="any" placeholder="Petal Width" required>
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction %}
+            <h3>Prediction: {{ prediction }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
